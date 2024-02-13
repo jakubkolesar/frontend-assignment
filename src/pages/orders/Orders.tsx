@@ -23,11 +23,11 @@ const Orders = () => {
   });
   const { isLoading, sendRequest } = useHttp();
 
-  const handleTypeChange = (state: OrderType) => {
+  const handleTypeChange = (orderType: OrderType) => {
     setOrdersState((prevState) => ({
-      orderType: state,
+      orderType: orderType,
       ordersArray: prevState.ordersArray,
-      filteredOrders: filterData(prevState.ordersArray, state),
+      filteredOrders: filterData(prevState.ordersArray, orderType),
     }));
   };
 
@@ -49,13 +49,13 @@ const Orders = () => {
     if (orderType === OrderType.PENDING) {
       filteredItems = data.filter((item) =>
         Object.values(PendingOrderState).includes(
-          item.state as PendingOrderState & CompletedOrderState
+          item.state as PendingOrderState
         )
       );
     } else {
       filteredItems = data.filter((item) =>
         Object.values(CompletedOrderState).includes(
-          item.state as PendingOrderState & CompletedOrderState
+          item.state as CompletedOrderState
         )
       );
     }

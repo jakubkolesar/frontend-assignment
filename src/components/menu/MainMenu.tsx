@@ -4,6 +4,7 @@ import { Route } from "../../api/models/app/route";
 import MenuItemComponent from "./MenuItemComponent";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { LocalstorageKeys } from "../../api/utils/localstorage-keys";
 
 const MainMenu = () => {
   const { t, i18n } = useTranslation();
@@ -21,7 +22,9 @@ const MainMenu = () => {
   };
 
   const switchLanguageHandler = () => {
-    i18n.changeLanguage(getOppositeLanguage());
+    const newLanguage = getOppositeLanguage();
+    i18n.changeLanguage(newLanguage);
+    localStorage.setItem(LocalstorageKeys.LANGUAGE, newLanguage);
   };
 
   return (
