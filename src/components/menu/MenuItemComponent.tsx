@@ -1,9 +1,17 @@
-import { MenuItem } from "../../api/models/menu-item";
+import { MenuItem } from "../../api/models/app/menu-item";
+import classes from "./MenuItemComponent.module.scss";
 
-interface MenuItemProps {
-  data: MenuItemComponent;
-}
-const MenuItem = (props: MenuItemProps) => {
-  return <>MENU ITEM</>;
+const MenuItemComponent = (props: MenuItem) => {
+  return (
+    <button
+      className={`${classes.icon} ${
+        props.isActive ? classes.active : ""
+      } text-small`}
+      onClick={props.onClick}
+    >
+      {props.icon}
+      <p>{props.title}</p>
+    </button>
+  );
 };
-export default MenuItem;
+export default MenuItemComponent;

@@ -1,13 +1,40 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "./assets/webfonts/css/webfonts.scss";
+@import "./assets/css/font-sizes.scss";
+
+:root {
+  //colors
+  --root-bg-color: rgb(28, 43, 56);
+  --primary-bg-text: rgb(16, 31, 46);
+  --secondary-bg-text: rgb(226, 212, 206);
+  --secondary-bg-shadow: rgba(226, 212, 206, .5);
+  --tertiary-bg: rgb(231, 155, 145);
+  --card-text: rgb(1, 2, 27);
+  --card-bg: rgb(217, 217, 217);
+
+  // radiuses
+  --big-radius: .7rem;
+  --normal-radius: .3rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--root-bg-color);
+}
+
+
+h1, h2, h3, h4, h5, p, a {
+  color: var(--secondary-bg-text);
+}
+
+button {
+  background: none;
+  outline: none;
+  border: unset;
+  cursor: pointer;
 }

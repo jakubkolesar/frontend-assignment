@@ -1,0 +1,15 @@
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    color: var(--secondary-bg-text);
+    font-size: 4rem;
+  }
+
+  .right {
+    display: flex;
+    gap: 1rem;
+  }
+}
+

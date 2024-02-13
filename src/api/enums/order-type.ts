@@ -1,4 +1,4 @@
-export enum OrderState {
+export enum OrderType {
   PENDING = "PENDING",
   COMPLETED = "COMPLETED",
 }

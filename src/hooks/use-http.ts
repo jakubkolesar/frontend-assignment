@@ -1,4 +1,4 @@
-import { UseHttpConfig } from "../api/models/use-http-config";
+import { UseHttpConfig } from "../api/models/app/use-http-config";
 import { useCallback, useState } from "react";
 
 export const useHttp = () => {

@@ -1,14 +1,17 @@
 import { PendingOrderState } from "../../enums/pending-order-state";
 import { CompletedOrderState } from "../../enums/completed-order-state";
 import { Customer } from "./customer";
+import { OrderItem } from "./order-item";
+import { Payment } from "./payment";
+import { Resort } from "./resort";
 
-export interface OrderItem {
+export interface OrdersResponse {
   id: string;
   createdAt: Date;
-  customer: Customer; // todo
+  customer: Customer;
   deliveryMethod: string;
-  orderItems: any; //todo
-  payment: any; //todo
-  resort: any; // todo,
+  orderItems: OrderItem[];
+  payment: Payment;
+  resort: Resort;
   state: PendingOrderState | CompletedOrderState;
 }

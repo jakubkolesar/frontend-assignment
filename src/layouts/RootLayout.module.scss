@@ -1,3 +1,15 @@
 .content-wrapper {
   padding: 1rem;
+  overflow: hidden;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  min-height: calc(100vh - 3rem);
+  width: 50rem;
+  border-radius: var(--big-radius);
+  background: var(--primary-bg-text);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

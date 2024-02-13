@@ -1,0 +1,36 @@
+
+.icon{
+  border: .2rem solid transparent;
+  padding: 1rem 2rem;
+  border-radius: var(--normal-radius);
+  transition: .3s ease all;
+  svg {
+    font-size: 2.2rem;
+    fill: var(--secondary-bg-text);
+    transition: .3s ease all;
+  }
+  p {
+    margin-top: .7rem;
+    font-weight: bold;
+    transition: .3s ease all;
+  }
+
+  &:hover {
+    border: .2rem solid var(--secondary-bg-text);
+    box-shadow: 2px 2px 6px var(--secondary-bg-shadow);
+    p, svg{
+      transform: translate(-1px, -1px);
+    }
+  }
+
+  &.active {
+    pointer-events: none;
+    background: var(--secondary-bg-text);
+    svg {
+      fill: var(--primary-bg-text);
+    }
+    p {
+      color: var(--primary-bg-text)
+    }
+  }
+}
