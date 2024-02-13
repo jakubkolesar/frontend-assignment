@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "orders": "Orders"
+  },
+  "switcher": {
+    "pending": "Pending",
+    "completed": "Completed"
+  },
+  "orderItem": {
+    "total": "Total",
+    "cancel": "Cancel",
+    "state": {
+      "completed": "Completed",
+      "canceled": "Canceled by customer",
+      "rejected": "Rejected",
+      "expired": "Expired",
+      "failed": "Failed",
+      "new": "New",
+      "waiting": "Waiting for confirmation",
+      "confirmed": "Confirmed"
+    }
+  }
+}

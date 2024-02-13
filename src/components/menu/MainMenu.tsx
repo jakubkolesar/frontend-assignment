@@ -21,9 +21,6 @@ const MainMenu = () => {
   };
 
   const switchLanguageHandler = () => {
-    // if (dispatch) {
-    //   dispatch({ type: LanguageActionKind.SWITCH });
-    // }
     i18n.changeLanguage(getOppositeLanguage());
   };
 

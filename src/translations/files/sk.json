@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "orders": "Objednávky"
+  },
+  "switcher": {
+    "pending": "Čakajúce",
+    "completed": "Dokončené"
+  },
+  "orderItem": {
+    "total": "Spolu",
+    "cancel": "Zrušiť",
+    "state": {
+      "completed": "Dokončené",
+      "canceled": "Zrušené zákazníkom",
+      "rejected": "Zamietnuté",
+      "expired": "Expirované",
+      "failed": "Neúspešné",
+      "new": "Nové",
+      "waiting": "Čakajúce na potvrdenie",
+      "confirmed": "Potvrdené"
+    }
+  }
+}
