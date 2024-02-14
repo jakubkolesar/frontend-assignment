@@ -4,19 +4,20 @@
   },
   "switcher": {
     "pending": "Pending",
-    "completed": "Completed"
+    "completed": "Completed",
+    "unsuccessfull": "Unsuccessfull"
   },
   "orderItem": {
     "total": "Total",
     "cancel": "Cancel",
     "state": {
       "completed": "Completed",
-      "canceled": "Canceled by customer",
+      "canceled_by_customer": "Canceled by customer",
       "rejected": "Rejected",
       "expired": "Expired",
       "failed": "Failed",
       "new": "New",
-      "waiting": "Waiting for confirmation",
+      "waiting_for_confirmation": "Waiting for confirmation",
       "confirmed": "Confirmed"
     }
   }

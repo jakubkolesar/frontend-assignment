@@ -1,5 +1,3 @@
-import { PendingOrderState } from "../../enums/pending-order-state";
-import { CompletedOrderState } from "../../enums/completed-order-state";
 import { Customer } from "./customer";
 import { OrderItem } from "./order-item";
 import { Payment } from "./payment";
@@ -13,5 +11,5 @@ export interface OrdersResponse {
   orderItems: OrderItem[];
   payment: Payment;
   resort: Resort;
-  state: PendingOrderState | CompletedOrderState;
+  state: string;
 }

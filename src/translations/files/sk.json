@@ -4,19 +4,20 @@
   },
   "switcher": {
     "pending": "Čakajúce",
-    "completed": "Dokončené"
+    "completed": "Dokončené",
+    "unsuccessfull": "Zlyhane"
   },
   "orderItem": {
     "total": "Spolu",
     "cancel": "Zrušiť",
     "state": {
       "completed": "Dokončené",
-      "canceled": "Zrušené zákazníkom",
+      "canceled_by_customer": "Zrušené zákazníkom",
       "rejected": "Zamietnuté",
       "expired": "Expirované",
       "failed": "Neúspešné",
       "new": "Nové",
-      "waiting": "Čakajúce na potvrdenie",
+      "waiting_for_confirmation": "Čakajúce na potvrdenie",
       "confirmed": "Potvrdené"
     }
   }

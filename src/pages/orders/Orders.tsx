@@ -1,12 +1,10 @@
 import classes from "./Orders.module.scss";
 import OrderTypeSwitcher from "../../components/switcher/OrderTypeSwitcher";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { OrderType } from "../../api/enums/order-type";
 import { useHttp } from "../../hooks/use-http";
 import { OrdersResponse } from "../../api/models/responses/orders-response";
 import OrderItemComponent from "../../components/order-item/OrderItemComponent";
-import { PendingOrderState } from "../../api/enums/pending-order-state";
-import { CompletedOrderState } from "../../api/enums/completed-order-state";
 import OrderItemsGrid from "../../components/grids/OrderItemsGrid";
 
 interface OrdersState {
@@ -14,6 +12,14 @@ interface OrdersState {
   ordersArray: OrdersResponse[];
   filteredOrders: OrdersResponse[];
 }
+
+const orderMap = new Map<OrderType, string[]>([
+  [OrderType.PENDING, ["new", "waiting_for_confirmation", "confirmed"]],
+  [
+    OrderType.COMPLETED,
+    ["completed", "canceled_by_customer", "failed", "rejected", "expired"],
+  ],
+]);
 
 const Orders = () => {
   const [ordersState, setOrdersState] = useState<OrdersState>({
@@ -31,7 +37,7 @@ const Orders = () => {
     }));
   };
 
-  const handleRequestData = (data: OrdersResponse[]) => {
+  const handleRequestData = useCallback((data: OrdersResponse[]) => {
     setOrdersState((prevState) => {
       return {
         orderType: prevState.orderType,
@@ -39,28 +45,13 @@ const Orders = () => {
         filteredOrders: filterData(data, prevState.orderType),
       };
     });
-  };
+  }, []);
 
   const filterData = (
     data: OrdersResponse[],
     orderType: OrderType
   ): OrdersResponse[] => {
-    let filteredItems: OrdersResponse[] = [];
-    if (orderType === OrderType.PENDING) {
-      filteredItems = data.filter((item) =>
-        Object.values(PendingOrderState).includes(
-          item.state as PendingOrderState
-        )
-      );
-    } else {
-      filteredItems = data.filter((item) =>
-        Object.values(CompletedOrderState).includes(
-          item.state as CompletedOrderState
-        )
-      );
-    }
-
-    return filteredItems;
+    return data.filter((item) => orderMap.get(orderType)?.includes(item.state));
   };
 
   useEffect(() => {
@@ -70,7 +61,7 @@ const Orders = () => {
       },
       handleRequestData
     );
-  }, [sendRequest]);
+  }, [handleRequestData, sendRequest]);
 
   if (isLoading) {
     return (
